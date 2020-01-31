@@ -1,0 +1,7 @@
+[project]
+org-name= "prasadhi"
+version= "0.1.0"
+keywords= ["microgateway", "interceptors"]
+repository= "https://github.com/SabinaPrasadhi/Sample_Interceptors"
+
+[dependencies]
