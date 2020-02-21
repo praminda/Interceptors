@@ -1,17 +1,24 @@
-import ballerina/io;
 import ballerina/http;
 import ballerina/jsonutils;
 
 public function formatRequest (http:Caller outboundEp, http:Request req) {
 	var xmlPayLoad = req.getXmlPayload();
-	var result = req.setContentType("application/json");
+	var content = req.setContentType("application/json");
 
-	if (result is () && xmlPayLoad is xml) {
+	if (content is () && xmlPayLoad is xml) {
 		json | error jsonPayLoad = jsonutils:fromXML(xmlPayLoad);
 		if (jsonPayLoad is error) {
-			io:println("Error during xml to json conversion.");
+			http:Response res = new;
+			res.statusCode = 400;
+			res.setJsonPayload({msg: "Error while formatting request"});
+			var result = outboundEp->respond(res);
 		} else {
-			req.setPayload(<@untainted> jsonPayLoad);                
+			req.setJsonPayload(<@untainted> jsonPayLoad);
 		}
+	} else {
+		http:Response res = new;
+		res.statusCode = 400;
+		res.setJsonPayload({msg: "Error while formatting request"});
+		var result = outboundEp->respond(res);
 	}
 }
