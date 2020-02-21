@@ -1,7 +1,7 @@
-# Formatter_Interceptor_Module
-This repository contains a module with two sample interceptors where the Request Interceptor converts a xml payload to a 
-json payload and the Response Interceptor converts a json payload to a xml payload. 
+# Interceptors
+This repository contains a set of ballerina modules shared in Ballerina Central which handles request and response intercepting with WSO2 API Microgateway.
 
-1. jsonToXmlFormatter.bal       - A response interceptor which converts a JSON payload to a XML payload.
-2. xmlToJsonFormatter.bal       - A request interceptor which converts a XML payload to a JSON payload.
-3. formatterInterceptorTest.bal - contains test functions for the request and response interceptors.
+## Formatters
+This module provides two basic interceptors for `json` to `xml` and `xml` to `json` message transformations.
+
+Refer: [Formatters Module.md](src/formatters/Module.md)
