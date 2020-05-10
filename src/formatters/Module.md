@@ -1,4 +1,4 @@
-Sample interceptors which are relevant for API Microgateway request and response formatting.
+Sample interceptors which are relevant for [WSO2 API Microgateway](https://wso2.com/api-management/api-microgateway/) request and response formatting.
 
 # Module Overview
 This module provides two basic interceptors for `json` to `xml` and `xml` to `json` message transformations.
@@ -7,11 +7,11 @@ This module provides two basic interceptors for `json` to `xml` and `xml` to `js
 
     **Syntax:**
     ```yaml
-    x-wso2-request-interceptor: praminda/formatters/0.2.0:formatRequest
+    x-wso2-request-interceptor: praminda/formatters/0.4.0:formatRequest
     ```
 1. The response interceptor (`jsonToXmlFormatter.bal`) will convert a JSON payload to a XML payload.
 
     **Syntax:**
     ```yaml
-    x-wso2-response-interceptor: praminda/formatters/0.2.0:formatResponse
+    x-wso2-response-interceptor: praminda/formatters/0.4.0:formatResponse
     ```
